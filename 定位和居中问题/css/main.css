@@ -1,15 +1,17 @@
 body {
     text-align: center;
-    height: 100%;
+    margin: 0;
+    padding: 10px;
+    border: 1px solid black;
 }
 div {
+    display: inline-block;
     position: relative;
-    left: 50%;
-    margin-left: -200px;
     height: 200px;
     width: 400px;
     background-color: #ccc;
     overflow: hidden;
+
 }
 div:before {
     content: "";
