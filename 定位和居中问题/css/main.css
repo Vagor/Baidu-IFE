@@ -4,7 +4,8 @@ body {
 }
 div {
     position: relative;
-    display: inline-block;
+    left: 50%;
+    margin-left: -200px;
     height: 200px;
     width: 400px;
     background-color: #ccc;
