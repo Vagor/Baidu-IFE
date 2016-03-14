@@ -60,6 +60,8 @@ body {
 [class *=logo-person]:last-child {
     margin-bottom: 0px;
 }
-.clearfix {
+.container::after{
+    content: "";
+    display: block;
     clear: both;
 }
