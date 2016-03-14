@@ -1,10 +1,10 @@
 body {
-    text-align: center;
-    height: 100%;
+    display: flex;
+    justify-content: center;
 }
 div {
+    margin: 10px;
     position: relative;
-    display: inline-block;
     height: 200px;
     width: 400px;
     background-color: #ccc;
