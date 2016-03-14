@@ -4,6 +4,7 @@ body {
     padding: 10px;
     border: 1px solid black;
 }
+
 div {
     display: inline-block;
     position: relative;
@@ -11,8 +12,8 @@ div {
     width: 400px;
     background-color: #ccc;
     overflow: hidden;
-
 }
+
 div:before {
     content: "";
     display: block;
@@ -24,6 +25,7 @@ div:before {
     border-radius: 50px;
     background-color: #fc0;
 }
+
 div:after {
     content: "";
     display: block;
