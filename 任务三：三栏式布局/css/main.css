@@ -13,6 +13,7 @@ body {
     padding: 20px;
     background-color: #eee;
     border: 1px solid #999;
+    overflow: auto;
 }
 .team-info {
     width: 200px;
@@ -59,9 +60,4 @@ body {
 }
 [class *=logo-person]:last-child {
     margin-bottom: 0px;
-}
-.container::after{
-    content: "";
-    display: block;
-    clear: both;
 }
