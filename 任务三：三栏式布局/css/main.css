@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
 }
 .page {
     position: relative;
@@ -39,10 +40,12 @@ body {
     border: 1px solid #999;
 }
 .content {
-    position: absolute;
+    // position: absolute;
     padding: 20px;
-    left: 302px;
-    right: 183px;
+    // left: 302px;
+    // right: 183px;
+    margin-left: 260px;
+    margin-right: 140px;
     border: 1px solid #999;
     background-color: #fff;
 }
