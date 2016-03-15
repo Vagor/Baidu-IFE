@@ -13,7 +13,6 @@ body {
     padding: 20px;
     background-color: #eee;
     border: 1px solid #999;
-    overflow: auto;
 }
 .team-info {
     width: 200px;
@@ -28,7 +27,10 @@ body {
     margin-left: 20px;
     vertical-align: top;
 }
-
+.logo-team {
+    background: url("../img/team.jpg") center no-repeat;
+    background-size: contain;
+}
 [class *=logo] {
     display: inline-block;
     width: 80px;
@@ -55,9 +57,24 @@ body {
     border: 1px solid #999;
     background-color: #fff;
 }
-[class *=logo-person] {
-    margin-bottom: 20px;
-}
 [class *=logo-person]:last-child {
     margin-bottom: 0px;
+}
+
+.logo-person-1 {
+    background: url("../img/1.jpg") center no-repeat;
+}
+.logo-person-2 {
+    background: url("../img/2.jpg") center no-repeat;
+}
+.logo-person-3 {
+    background: url("../img/3.jpg") center no-repeat;
+}
+[class *=logo-person] {
+    margin-bottom: 20px;
+    background-size: contain;
+}
+
+.clearfix {
+    clear: both;
 }
