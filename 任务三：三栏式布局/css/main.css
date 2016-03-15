@@ -1,13 +1,15 @@
 body {
     margin: 0;
-    font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+    font-family: "Arial", "Microsoft YaHei", "黑体", "宋体", sans-serif;
 }
+
 .page {
     position: relative;
     width: 100%;
     box-sizing: border-box;
     padding: 20px;
 }
+
 .container {
     width: 100%;
     box-sizing: border-box;
@@ -15,6 +17,7 @@ body {
     background-color: #eee;
     border: 1px solid #999;
 }
+
 .team-info {
     width: 200px;
     float: left;
@@ -22,16 +25,19 @@ body {
     border: 1px solid #999;
     background-color: #fff;
 }
+
 .team-info h2 {
     display: inline;
     font-size: 20px;
     margin-left: 20px;
     vertical-align: top;
 }
+
 .logo-team {
     background: url("../img/team.jpg") center no-repeat;
     background-size: contain;
 }
+
 [class *=logo] {
     display: inline-block;
     width: 80px;
@@ -39,20 +45,20 @@ body {
     background-color: #eee;
     border: 1px solid #999;
 }
+
 .content {
-    // position: absolute;
     padding: 20px;
-    // left: 302px;
-    // right: 183px;
     margin-left: 260px;
     margin-right: 140px;
     border: 1px solid #999;
     background-color: #fff;
 }
+
 .content h3 {
     margin: 0;
     padding: 0;
 }
+
 .personal-info {
     float: right;
     width: 80px;
@@ -60,6 +66,7 @@ body {
     border: 1px solid #999;
     background-color: #fff;
 }
+
 [class *=logo-person]:last-child {
     margin-bottom: 0px;
 }
@@ -67,17 +74,25 @@ body {
 .logo-person-1 {
     background: url("../img/1.jpg") center no-repeat;
 }
+
 .logo-person-2 {
     background: url("../img/2.jpg") center no-repeat;
 }
+
 .logo-person-3 {
     background: url("../img/3.jpg") center no-repeat;
 }
+
 [class *=logo-person] {
     margin-bottom: 20px;
     background-size: contain;
 }
 
-.clearfix {
+.clearfix:after {
+		content: "";
+    display: table;
     clear: both;
+}
+.clearfix {
+    *zoom: 1;
 }
