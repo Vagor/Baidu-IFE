@@ -1,0 +1,41 @@
+
+
+.container {
+    display: flex;
+    height: 500px;
+    border: 1px solid #999;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container div {
+    width: 150px;
+    border: 1px solid #f00;
+}
+
+.container div:last-child {
+    border: 1px solid #0f0;
+    height: 200px;
+}
+
+.h120 {
+    height: 120px;
+}
+
+.h100 {
+    height: 100px;
+}
+
+.h40 {
+    height: 40px;
+}
+@media (max-width: 640px) {
+    .container {
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+    .h200 {
+        border: 1px solid #f00;
+        order: -1;
+    }
+}
