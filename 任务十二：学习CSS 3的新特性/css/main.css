@@ -1,0 +1,127 @@
+thead td {
+    background-color: #000;
+    color: #fff;
+}
+
+tbody tr:nth-child(2n-1) {
+    background-color: #fff;
+}
+
+tbody tr:nth-child(2n) {
+    background-color: #ccc;
+}
+
+tbody tr:first-child,
+tbody tr:nth-child(2),
+tbody tr:nth-child(3) {
+    color: #f00;
+}
+
+.input-container {
+    width: 219px;
+    text-align: center;
+    margin: 50px 0;
+}
+
+.input-box {
+    width: 100px;
+}
+
+.input-box:focus {
+    animation: bigger 0.3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes bigger {
+    0% {
+        width: 100px;
+    }
+    100% {
+        width: 208px;
+    }
+}
+
+.display-box {
+    width: 219px;
+    overflow: hidden;
+}
+
+.slider-container {
+    font-size: 0;
+    width: 657px;
+    height: 80px;
+}
+
+.item {
+    width: 219px;
+    height: 80px;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+.item:nth-child(1) {
+    background: #f00;
+}
+
+.item:nth-child(2) {
+    background: #0f0;
+}
+
+.item:nth-child(3) {
+    background: #00f;
+}
+
+.num {
+    position: absolute;
+    margin-top: -20px;
+    margin-left: 145px;
+}
+
+.num span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 0 1px;
+    padding: 0;
+    line-height: 20px;
+    text-align: center;
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.display-box [class*=card] {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    margin-top: 60px;
+    z-index: 1;
+    opacity: 0.5;
+}
+
+.card1 {
+    margin-left: 147px;
+}
+
+.card2 {
+    margin-left: 174px;
+}
+
+.card3 {
+    margin-left: 199px;
+}
+
+.card1:checked~div {
+    transform: translateX(0px);
+    transition: all 0.75s ease-in-out;
+}
+
+.card2:checked~div {
+    transform: translateX(-219px);
+    transition: all 0.75s ease-in-out;
+}
+
+.card3:checked~div {
+    transform: translateX(-438px);
+    transition: all 0.75s ease-in-out;
+}
