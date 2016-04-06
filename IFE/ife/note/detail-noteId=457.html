@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-sweb-app-capable" content="yes"><meta name="keywords" content="前端, 前端开发, web前端, 前端开发工程师, CSS, JavaScript, HTML, Web标准"><meta name="description" content="百度前端技术学院"><link rel="shortcut icon" href="../asset/img/favicon.ico" type="image/x-icon"><link rel="icon" href="../asset/img/favicon.ico" type="image/x-icon"><link rel="bookmark" href="../asset/img/favicon.ico" type="image/x-icon">
+<title>【笔记】 任务三：三栏式布局</title>
+<link href="../asset/css/note/noteDetail_3422fb20.css" rel="stylesheet">
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?d422e3cabaaaa7445e54622b97472bab";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+
+
+</head><body class="result-op"><div id="viewport"><header ><nav class="navbar navbar-default container ife-header"><div class="row"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><div class="navbar-brand ife-logo"><a href="../index.html"><img src="../asset/img/logo.png"></a></div></div><div id="navbar" class="navbar-collapse collapse"><ul class="nav navbar-nav"><li><a href="../task/all.html">任务</a></li><li><a href="all.html">学习笔记</a></li><li class="user-dropdown"><a href="https://openapi.baidu.com/oauth/2.0/authorize?client_id=89XtMi6980UVMb5iMiRAL27g&response_type=code&redirect_uri=http%3A%2F%2Fife.baidu.com%2Flog%2Fin&scope=&state=a5dee3bc7f6dff14428026f427affd0f&display=page">登录</a></li></ul></div></div></nav></header>
+<main class="container note-detail-page"><div class="breadcrumb nav-title"><span class="active">【笔记】 任务三：三栏式布局</span></div><div class="main"><div class="main-wrap col-md-9"><div class="detail"><span class="author-wrap">作者：<img src="http://tb.himg.baidu.com/sys/portrait/item/b88fe998bfe588a9e698afe582bbe5ad908535" class="portrait-photo"><a href="../user/profile-userId=10533.html">洪志强 </a>@<a href="../group/profile-groupId=4055.html">302</a></span><span class="publish-date">发布于：03-23 18:26</span><span class="view-count">阅读：8</span><span class="support-wrap"><a class="glyphicon glyphicon-thumbs-up support-btn " data-role="up"></a>赞<span class="up-num sup-num">0</span><a class="glyphicon glyphicon-thumbs-down support-btn " data-role="down"></a>踩<span class="down-num sup-num">0</span></span></div><div class="note-content-wrap"><div class="content-text"><div id="epiceditor-preview" style="word-wrap: break-word;"><h3 id="-">知识点</h3>
+<h4 id="-">三栏式布局实现</h4>
+<p>示例代码：</p>
+<pre><code class="lang-html">&lt;style&gt;
+    #divMain { width: 500px; }
+    #left-div { width: 100px; float: left; background-color: #fcc; }
+    #middle-div { margin-left: 100px; margin-right: 100px; background-color: #cfc; }
+    #right-div { width: 100px; float: right; background-color: #ccf; }
+&lt;/style&gt;
+
+&lt;div id="divMain"&gt;
+    &lt;div id="left-div"&gt;
+        left div
+    &lt;/div&gt;
+    &lt;div id="right-div"&gt;
+        right div
+    &lt;/div&gt;
+    &lt;div id="middle-div"&gt;
+        middle div&lt;br /&gt;bit taller
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p><a href="http://stackoverflow.com/questions/4873832/make-a-div-fill-up-the-remaining-width">http://stackoverflow.com/questions/4873832/make-a-div-fill-up-the-remaining-width</a></p>
+</div></div></div></div><!-- 侧边栏 --><div class="slide-wrap col-md-3"><p class="add-tip">快来这里总结下学到的知识吧！</p><a href="createorupdatenote.html" class="btn btn-success">新建笔记</a></div></div><div class="modal fade" id="delModal"><div class="modal-dialog"><div class="modal-content"><div class="modal-body"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h5>确定要删除该笔记？</h5></div><div class="modal-footer"><button type="button" class="btn btn-default" data-dismiss="modal">取消</button><button type="button" class="btn btn-primary del-btn" data-dismiss="modal">确定</button></div></div></div></div></main><div class="alert alert-success hide-sus" role="alert">已屏蔽</div><div class="alert alert-danger hide-fail" role="alert">屏蔽失败，请重试！</div><div class="alert alert-danger del-fail" role="alert">删除失败，请重试！</div>
+<footer><p><span class="contact">微信公众号：baidu_ife</span><span class="contact">微博：<a target="_blank" href="http://weibo.com/u/5568860641?topnav=1&wvr=6&topsug=1">Baidu前端技术学院</a></span></p><p class="friend-link"><span class="note">友情链接</span><a target="_blank" title="百度EFE前端团队" href="http://efe.baidu.com">百度EFE</a><a target="_blank" href="http://voice.baidu.com">百度语音搜索</a><a href="http://www.chuanke.com/" target="_blank">百度传课</a><a target="_blank" href="http://campus.baidu.com/">百度校园</a><a target="_blank" href="http://talent.baidu.com/external/baidu/campus.html">百度校园招聘</a></p><p><span class="copyright-text"><span>©2016&nbsp;Baidu&nbsp;</span><a href="http://www.baidu.com/duty/" target="_blank">使用百度前必读</a>&nbsp;<a href="http://jianyi.baidu.com" target="_blank">意见反馈</a>&nbsp;<span>京ICP证030173号&nbsp;</span></span></p></footer></div><script src="http://s1.bdstatic.com/r/www/cache/ecom/esl/2-1-4/esl.js"></script><script src="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/js/lib/jquery-1.10.2_d88366fd.js"></script><script src="../dep/EpicEditor-v0.2.2/js/epiceditor.js"></script><script>require.config({'baseUrl': '//ife.baidu.com/asset','paths': { 'bootstrapvalidator': '../dep/bootstrapvalidator/dist/js/bootstrapValidator' },'waitSeconds': 5,'packages': [{'name': 'etpl','location': '../dep/etpl/3.1.0/asset','main': 'main'},{'name': 'bootstrap','location': '../dep/bootstrap-3.3.5/js'},{'name': 'select2','location': '../dep/select2/dist/js','main': 'select2'},{'name': 'jquery-bootpag','location': '../dep/jquery-bootpag/lib','main': 'jquery.bootpag'},{'name': 'bootstrap-slider','location': '../dep/bootstrap-slider/asset/js','main': 'bootstrap-slider'},{'name': 'saber-emitter','location': '../dep/saber-emitter/1.0.0/asset','main': 'emitter'},{'name': 'marked','location': '../dep/marked/lib','main': 'marked'}],'shim': {'bootstrap/button': ['jquery'],'bootstrap/modal': ['jquery'],'bootstrap/collapse': ['jquery'],'bootstrap/dropdown': ['jquery'],'bootstrap/tab': ['jquery'],'bootstrapvalidator': ['jquery'],'jquery-bootpag/jquery.bootpag': ['jquery']}});</script>
+<script>
+    require(['note/noteDetail_9fb33293'], function (app) {
+        app.init(
+            {"login":0,"taskUrl":"\/task\/all","noteUrl":"\/note\/all","loginUrl":"https:\/\/openapi.baidu.com\/oauth\/2.0\/authorize?client_id=89XtMi6980UVMb5iMiRAL27g&response_type=code&redirect_uri=http%3A%2F%2Fife.baidu.com%2Flog%2Fin&scope=&state=a5dee3bc7f6dff14428026f427affd0f&display=page"},
+            457
+        );
+    });
+
+</script>
+</body>
+</html>

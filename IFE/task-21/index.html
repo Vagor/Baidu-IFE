@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>task-20</title>
+  <style media="screen">
+    .display-box {
+      height: 100px;
+      margin-top: 20px;
+      font-size: 0;
+    }
+    .display-box-item {
+      font-size: 14px;
+      display: inline-block;
+      height: 25px;
+      line-height: 25px;
+      margin: 2px;
+      background-color: #f40;
+      color: white;
+      padding: 10px;
+      transition: background-color , 0.5s;
+    }
+    .display-box-item:hover {
+      background-color: #ffb000;
+    }
+    .display-box-item:hover::before {
+      content: "删除“";
+    }
+    .display-box-item:hover::after {
+      content: "”标签";
+    }
+  </style>
+</head>
+
+<body>
+  <label for="tags_1">Tags:</label>
+  <input type="text" name="tags_1" value="" id="tag" placeholder="输入标签后按回车">
+  <div class="display-box" id="displayBox_1">
+    <div class="display-box-item">HTML</div>
+    <div class="display-box-item">CSS</div>
+    <div class="display-box-item">Javascript</div>
+  </div>
+  <textarea id="textarea" name="tagsarea" rows="8" cols="40"></textarea>
+  <br>
+  <input id="btnAddTag" type="button" name="name" value="确认兴趣爱好">
+  <div class="display-box" id="displayBox_2">
+    <div class="display-box-item">HTML</div>
+    <div class="display-box-item">CSS</div>
+    <div class="display-box-item">Javascript</div>
+  </div>
+  <script src="./main.js"></script>
+</body>
+
+</html>

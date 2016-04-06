@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-sweb-app-capable" content="yes"><meta name="keywords" content="前端, 前端开发, web前端, 前端开发工程师, CSS, JavaScript, HTML, Web标准"><meta name="description" content="百度前端技术学院"><link rel="shortcut icon" href="../asset/img/favicon.ico" type="image/x-icon"><link rel="icon" href="../asset/img/favicon.ico" type="image/x-icon"><link rel="bookmark" href="../asset/img/favicon.ico" type="image/x-icon">
+<title>任务七的总结</title>
+<link href="../asset/css/note/noteDetail_3422fb20.css" rel="stylesheet">
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?d422e3cabaaaa7445e54622b97472bab";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+
+
+</head><body class="result-op"><div id="viewport"><header ><nav class="navbar navbar-default container ife-header"><div class="row"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><div class="navbar-brand ife-logo"><a href="../index.html"><img src="../asset/img/logo.png"></a></div></div><div id="navbar" class="navbar-collapse collapse"><ul class="nav navbar-nav"><li><a href="../task/all.html">任务</a></li><li><a href="all.html">学习笔记</a></li><li class="user-dropdown"><a href="https://openapi.baidu.com/oauth/2.0/authorize?client_id=89XtMi6980UVMb5iMiRAL27g&response_type=code&redirect_uri=http%3A%2F%2Fife.baidu.com%2Flog%2Fin&scope=&state=a5dee3bc7f6dff14428026f427affd0f&display=page">登录</a></li></ul></div></div></nav></header>
+<main class="container note-detail-page"><div class="breadcrumb nav-title"><span class="active">任务七的总结</span></div><div class="main"><div class="main-wrap col-md-9"><div class="detail"><span class="author-wrap">作者：<img src="http://tb.himg.baidu.com/sys/portrait/item/83af7961746573737373f456" class="portrait-photo"><a href="../user/profile-userId=1266.html">苗懿承 </a>@<a href="../group/profile-groupId=1700.html">西恩前端</a></span><span class="publish-date">发布于：03-23 18:58</span><span class="view-count">阅读：5</span><span class="support-wrap"><a class="glyphicon glyphicon-thumbs-up support-btn " data-role="up"></a>赞<span class="up-num sup-num">0</span><a class="glyphicon glyphicon-thumbs-down support-btn " data-role="down"></a>踩<span class="down-num sup-num">0</span></span></div><div class="note-content-wrap"><div class="content-text"><div id="epiceditor-preview" style="word-wrap: break-word;"><hr>
+<p>layout: post
+title: 百度ife项目之html
+date: 2016-03-23</p>
+<h2 id="categories-html-">categories: HTML </h2>
+<p>历时两天半的断断续续，我做完了本次百度ife的第七个任务（<a href="../task/detail-taskId=7.html">这里</a>），是一个html的布局任务，我做好的demo（<a href="http://yatessss.github.io/demo/baidu_ife/task_7/index.html">这里</a>）。</p>
+<p>尽管已经有过很多html布局的经验了，但不得不说很多东西我还都不太熟悉，下面就来总结一下做完这个任务的一些收获吧。</p>
+<p>我大概总结了这些收获吧：</p>
+<ol>
+<li>html5的新标签的应用，这个我专门总结了一下（<a href="http://www.yatessss.com/html/2016/03/18/HTML5%E7%9A%84%E5%AD%A6%E4%B9%A0.html">这里</a>）</li>
+<li>等宽多栏布局的实现</li>
+<li>父元素与子元素的<code>margin-top</code></li>
+<li><code>border-width</code></li>
+<li>超过行数限制显示……</li>
+<li><code>letter-spacing</code></li>
+<li>伪类标签</li>
+</ol>
+<hr>
+<h4 id="-">等宽多栏布局</h4>
+<p>其中有一个部分是这样的：</p>
+<p><img src="http://7xqch8.com1.z0.glb.clouddn.com/blog_2016_03_pic_2.png" alt=""></p>
+<p>这个是四栏布局，每个栏等宽且宽度应该随着屏幕宽度变化，要求有一个最小的宽度。</p>
+<p>我大概想到了这么几种布局的方案：使用<code>inline-block</code>布局、使用<code>flex</code>布局、使用<code>float</code>布局、使用框架的栅格布局。</p>
+<p>首先来说一下我最后选用的布局方案，我采用的是<code>float</code>布局，我给每一栏定了25%的宽，然后定了一个最小宽度<code>min-width</code>，然后让他向左浮动。</p>
+<p>{% highlight css %}</p>
+<p> text-align: center;
+    float: left;
+    height: inherit;
+    width: 25%;
+    min-width: 320px;</p>
+<p>{% endhighlight %}</p>
+<p><strong>为什么选择这种方案？</strong>如果使用<code>inline-block</code>布局两栏之间会有一个间隙，还得去处理这个间隙；使用<code>flex</code>布局的话移动端是很好的，但是如果是pc端的话会有兼容方面的问题；栅格布局肯定是可以的，但是在这上使用一个框架的话显得有些大材小用了。所以浮动我认为是一个比较好的方法。</p>
+<p>简单来说一下每一种布局方案：</p>
+<ol>
+<li>使用<code>inline-block</code>布局，这种布局方案会有一个小问题，就是在每个栏之间会有间隙，这个问题的具体解决与描述我找到了一篇文章（<a href="http://www.w3cplus.com/css/fighting-the-space-between-inline-block-elements">这里</a>）。这里详细的说明了这个问题的解决办法，所以如果是本来每栏之间就有间距的话，用<code>inline-block</code>布局是最好的了，他还可以配合<code>text-align</code>把多栏居中，用起来真的不错。</li>
+<li>使用<code>flex</code>布局，使用<code>dispaly: flex</code>，<code>flex : 1</code> 这样就保证了每栏等宽了，不过他有浏览器的兼容问题这个必须要注意，在ie10以上的浏览器中。</li>
+<li>栅格布局，他会把整个屏幕平均分成12列，根据自己的宽度来定义占用几列，这个大家得看具体的框架了，我就不详细描述了（因为我自己的实践也不是很多 - -）</li>
+<li><code>float</code>布局，这个主要注意的就是如果你的父容器如果没有定高的话记得清除浮动。不然父容器会没有高。。。。</li>
+</ol>
+<hr>
+<h4 id="-margin-top-">父元素与子元素的<code>margin-top</code></h4>
+<p>这个就是如果你给父容器的第一个子元素设定了<code>margin-top</code>的话，页面的效果不是子元素向下移动，而是父元素向下移动，而父元素和子元素的边距是没有变化的。这里我查找到的答案（<a href="http://blog.csdn.net/duran1986/article/details/6930967">这里</a>），我简单描述一下，在盒子模型中规定：所有毗邻的两个或更多盒元素的margin将会合并为一个margin共享之。毗邻的定义为：同级或者嵌套(父子之间)的盒元素，并且它们之间没有非空内容、Padding或Border分隔。所以父元素和子元素会共享这个边距。解决办法其实理解了上述的那篇文章自然就可以解决了。解决办法如下：</p>
+<ol>
+<li>修改父元素的高度，增加padding-top样式模拟（padding-top：1px；常用） </li>
+<li>为父元素添加overflow：hidden；样式即可（完美） </li>
+<li>为父元素或者子元素声明浮动（float：left；可用） </li>
+<li>为父元素添加border（border:1px solid transparent可用） </li>
+<li>为父元素或者子元素声明绝对定位</li>
+</ol>
+<hr>
+<h4 id="-border-width-"><code>border-width</code></h4>
+<p>通常我们写<code>border</code>时就会直接写成这样：<code>border: 1px solid #000;</code>类似这样，那这个<code>border-width</code>有什么用呢？这个可以定义四条边是不同宽度的，他的顺序和<code>margin</code>之类的是一样的上右下左这个顺序。</p>
+<p>还有这个用处，而且我这次写页面的时候就用到了：</p>
+<p><img src="http://7xqch8.com1.z0.glb.clouddn.com/blog_2016_03_pic_3.png" alt=""></p>
+<p>这个向下小箭头这么实现呢？当然我们可以用图标字体也可以用图片，但是用css我们也可以实现，这可能算是一个hack的方法吧，但是我觉得挺有趣的，我也是review别人代码是学习的。具体css如下：</p>
+<p>{% highlight css %}</p>
+<pre><code>display: block;
+width: 6px;
+height: 6px;
+border: solid #867e7a;
+border-width: 0 1px 1px 0;
+-webkit-transform: rotate(45deg);
+transform: rotate(45deg);
+</code></pre><p>{% endhighlight %}</p>
+<p>哈哈，真的很聪明，这样用<code>border-width</code>属性隐藏掉两边，再旋转一下就可以了！</p>
+<hr>
+<h4 id="-">超过行数限制显示……</h4>
+<p>这个也是学习的啦，<a href="http://www.zhangxinxu.com/study/201510/webkit-line-clamp-text-overflow-ellipsis.html">张鑫旭的博客</a>，下面贴出css：</p>
+<p>{% highlight css %}</p>
+<pre><code>.box {
+width: 400px; 
+display: -webkit-box;
+-webkit-line-clamp: 3;
+-webkit-box-orient: vertical;
+overflow: hidden;
+</code></pre><p>}</p>
+<p>{% endhighlight %}</p>
+<hr>
+<h4 id="-letter-spacing-"><code>letter-spacing</code></h4>
+<p>遇到这样的样式不知道大家是怎么解决的？</p>
+<p><img src="http://7xqch8.com1.z0.glb.clouddn.com/blog_2016_03_pic_4.png" alt=""></p>
+<p>大家是不是在两个字之间加很多的空格（<code>`）呢？还是怎么样？可以用一下这个css属性</code>letter-spacing<code>他可以改变字之间的间距，但是他有一个问题就是他会在</code>搜索<code>两个字的后面都加间距字不是居中的，所以配合</code>padding-left`加一个和间距相同的左内边距，这样就可以保证字是居中的了。</p>
+<hr>
+<h4 id="-">伪类标签</h4>
+<p><img src="http://7xqch8.com1.z0.glb.clouddn.com/blog_2016_03_pic_5.png" alt=""></p>
+<p><img src="http://7xqch8.com1.z0.glb.clouddn.com/blog_2016_03_pic_6.png" alt=""></p>
+<p>像图中对勾和横线这样的无意义的标签，我们最好是用before和after伪类来代替。</p>
+</div></div></div></div><!-- 侧边栏 --><div class="slide-wrap col-md-3"><p class="add-tip">快来这里总结下学到的知识吧！</p><a href="createorupdatenote.html" class="btn btn-success">新建笔记</a></div></div><div class="modal fade" id="delModal"><div class="modal-dialog"><div class="modal-content"><div class="modal-body"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h5>确定要删除该笔记？</h5></div><div class="modal-footer"><button type="button" class="btn btn-default" data-dismiss="modal">取消</button><button type="button" class="btn btn-primary del-btn" data-dismiss="modal">确定</button></div></div></div></div></main><div class="alert alert-success hide-sus" role="alert">已屏蔽</div><div class="alert alert-danger hide-fail" role="alert">屏蔽失败，请重试！</div><div class="alert alert-danger del-fail" role="alert">删除失败，请重试！</div>
+<footer><p><span class="contact">微信公众号：baidu_ife</span><span class="contact">微博：<a target="_blank" href="http://weibo.com/u/5568860641?topnav=1&wvr=6&topsug=1">Baidu前端技术学院</a></span></p><p class="friend-link"><span class="note">友情链接</span><a target="_blank" title="百度EFE前端团队" href="http://efe.baidu.com">百度EFE</a><a target="_blank" href="http://voice.baidu.com">百度语音搜索</a><a href="http://www.chuanke.com/" target="_blank">百度传课</a><a target="_blank" href="http://campus.baidu.com/">百度校园</a><a target="_blank" href="http://talent.baidu.com/external/baidu/campus.html">百度校园招聘</a></p><p><span class="copyright-text"><span>©2016&nbsp;Baidu&nbsp;</span><a href="http://www.baidu.com/duty/" target="_blank">使用百度前必读</a>&nbsp;<a href="http://jianyi.baidu.com" target="_blank">意见反馈</a>&nbsp;<span>京ICP证030173号&nbsp;</span></span></p></footer></div><script src="http://s1.bdstatic.com/r/www/cache/ecom/esl/2-1-4/esl.js"></script><script src="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/js/lib/jquery-1.10.2_d88366fd.js"></script><script src="../dep/EpicEditor-v0.2.2/js/epiceditor.js"></script><script>require.config({'baseUrl': '//ife.baidu.com/asset','paths': { 'bootstrapvalidator': '../dep/bootstrapvalidator/dist/js/bootstrapValidator' },'waitSeconds': 5,'packages': [{'name': 'etpl','location': '../dep/etpl/3.1.0/asset','main': 'main'},{'name': 'bootstrap','location': '../dep/bootstrap-3.3.5/js'},{'name': 'select2','location': '../dep/select2/dist/js','main': 'select2'},{'name': 'jquery-bootpag','location': '../dep/jquery-bootpag/lib','main': 'jquery.bootpag'},{'name': 'bootstrap-slider','location': '../dep/bootstrap-slider/asset/js','main': 'bootstrap-slider'},{'name': 'saber-emitter','location': '../dep/saber-emitter/1.0.0/asset','main': 'emitter'},{'name': 'marked','location': '../dep/marked/lib','main': 'marked'}],'shim': {'bootstrap/button': ['jquery'],'bootstrap/modal': ['jquery'],'bootstrap/collapse': ['jquery'],'bootstrap/dropdown': ['jquery'],'bootstrap/tab': ['jquery'],'bootstrapvalidator': ['jquery'],'jquery-bootpag/jquery.bootpag': ['jquery']}});</script>
+<script>
+    require(['note/noteDetail_9fb33293'], function (app) {
+        app.init(
+            {"login":0,"taskUrl":"\/task\/all","noteUrl":"\/note\/all","loginUrl":"https:\/\/openapi.baidu.com\/oauth\/2.0\/authorize?client_id=89XtMi6980UVMb5iMiRAL27g&response_type=code&redirect_uri=http%3A%2F%2Fife.baidu.com%2Flog%2Fin&scope=&state=a5dee3bc7f6dff14428026f427affd0f&display=page"},
+            458
+        );
+    });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-sweb-app-capable" content="yes"><meta name="keywords" content="前端, 前端开发, web前端, 前端开发工程师, CSS, JavaScript, HTML, Web标准"><meta name="description" content="百度前端技术学院"><link rel="shortcut icon" href="../asset/img/favicon.ico" type="image/x-icon"><link rel="icon" href="../asset/img/favicon.ico" type="image/x-icon"><link rel="bookmark" href="../asset/img/favicon.ico" type="image/x-icon">
+<title>浮动与BFC小节</title>
+<link href="../asset/css/note/noteDetail_3422fb20.css" rel="stylesheet">
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?d422e3cabaaaa7445e54622b97472bab";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+
+
+</head><body class="result-op"><div id="viewport"><header ><nav class="navbar navbar-default container ife-header"><div class="row"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><div class="navbar-brand ife-logo"><a href="../index.html"><img src="../asset/img/logo.png"></a></div></div><div id="navbar" class="navbar-collapse collapse"><ul class="nav navbar-nav"><li><a href="../task/all.html">任务</a></li><li><a href="all.html">学习笔记</a></li><li class="user-dropdown"><a href="https://openapi.baidu.com/oauth/2.0/authorize?client_id=89XtMi6980UVMb5iMiRAL27g&response_type=code&redirect_uri=http%3A%2F%2Fife.baidu.com%2Flog%2Fin&scope=&state=a5dee3bc7f6dff14428026f427affd0f&display=page">登录</a></li></ul></div></div></nav></header>
+<main class="container note-detail-page"><div class="breadcrumb nav-title"><span class="active">浮动与BFC小节</span></div><div class="main"><div class="main-wrap col-md-9"><div class="detail"><span class="author-wrap">作者：<img src="http://tb.himg.baidu.com/sys/portrait/item/c886636974697a656e73686970734106" class="portrait-photo"><a href="../user/profile-userId=1292.html">高可宽 </a>@<a href="../group/profile-groupId=1057.html">前端少年</a></span><span class="publish-date">发布于：03-23 21:28</span><span class="view-count">阅读：4</span><span class="support-wrap"><a class="glyphicon glyphicon-thumbs-up support-btn " data-role="up"></a>赞<span class="up-num sup-num">0</span><a class="glyphicon glyphicon-thumbs-down support-btn " data-role="down"></a>踩<span class="down-num sup-num">0</span></span></div><div class="note-content-wrap"><div class="content-text"><div id="epiceditor-preview" style="word-wrap: break-word;"><p>浮动的产生是为了实现 <strong>文字环绕效果</strong>，现在我们使用浮动实现很多布局。浮动的元素宽度会收缩为内容区域宽度，而不是再占据一整行。</p>
+<h2 id="-">为什么要清浮动</h2>
+<p>因为浮动元素会 <strong>脱离文档流</strong>,无法撑开父元素造成父元素的塌陷。 </p>
+<ul>
+<li>浮动的其他影响<ol>
+<li>对于浮动元素自身，会变成块级对象,即<code>display:block</code>.</li>
+<li>对于非浮动的块级兄弟元素，会占据浮动元素原始文档流中的位置，并且位于浮动元素z轴方向的下方，而且无法通过<code>z-index</code>调整到浮动元素上方。但是，其内部的文字会环绕浮动元素；对于内联的兄弟元素，会直接形成文字环绕效果。</li>
+<li>对于浮动的兄弟元素，如果方向相同会更在上一个浮动元素的后方，只要那一行放的下。</li>
+<li>对于其子元素。浮动元素的子元素会撑开浮动元素，使其高度适应于子元素的高度。</li>
+</ol>
+</li>
+</ul>
+<h2 id="-">如何清除浮动</h2>
+<p>在包含浮动元素的父元素上插入<code>.clearfix</code>类。</p>
+<h3 id="-clear-both-">方法一：底部插入<code>clear:both</code></h3>
+<pre><code>.clearfix:after{
+    content:'';
+    display:table;
+    clear:both;
+}
+</code></pre><pre><code>.container:before,
+.container:after {
+    content:"";
+    display:table;
+}
+.container:after {
+    clear:both;
+}
+.container {
+    zoom:1; /* For IE 6/7 (trigger hasLayout) */
+}
+</code></pre><h3 id="-bfc">方法二：使父元素成为新的BFC</h3>
+<pre><code>*zoom:1(IE6/7);
+float:left/right;
+position:absolute/fixed;
+overflow:hidden/scroll(IE7+);
+display:inline-block/table-cell;
+</code></pre><h2 id="-">为什么这些方法可以清除浮动 (的影响)</h2>
+<h3 id="-clear-">一、clear属性</h3>
+<p>规定了元素哪一侧 <strong>不允许出现浮动元素</strong>，一旦清除某一侧的浮动，会使元素的上外边框边界刚好在该侧浮动元素的下外边距边界之下。</p>
+<h3 id="-bfc-ie-haslayout-">二、新的BFC (IE中的haslayout)</h3>
+<blockquote>
+<p>BFC(Block formatting context)直译为"块级格式化上下文"。</p>
+</blockquote>
+<h4 id="bfc-">BFC的布局规则</h4>
+<ul>
+<li>内部的Box会在垂直方向，一个接一个地放置。</li>
+<li>Box垂直方向的距离由margin决定。属于同一个BFC的两个毗邻的Box的margin会发生重叠.
+这里 <strong>毗邻的定义</strong>为：同级或者嵌套的盒元素，并且它们之间没有非空内容、Padding或Border分隔。</li>
+<li>每个元素的margin box的左边,与包含块border box的左边相接触(对于从左往右的格式化，否则相反).即使存在浮动也是如此.</li>
+<li>BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素或受外面的元素影响.</li>
+<li>计算BFC的高度时，浮动元素也参与计算.</li>
+<li>BFC区域不会与floatbox重叠.</li>
+</ul>
+<p>从BFC的布局规则中我们就可以看出为什么他实现了清楚浮动带来的父元素的塌陷的问题,具体产生新的BFC的方法:</p>
+<ul>
+<li>根元素html</li>
+<li>浮动元素，float 除 none 以外的值</li>
+<li>绝对定位元素，position（absolute，fixed）</li>
+<li>display 为以下其中之一的值 inline-blocks，table-cells，table-captions</li>
+<li>overflow 除了 visible(默认值) 以外的值（hidden，auto，scroll）</li>
+</ul>
+<h2 id="bfc-">BFC规则的其他用途</h2>
+<ol>
+<li>解决外边距重叠问题  </li>
+</ol>
+<p>一个常见的外边距的场景就是我希望一个div的子元素div能跟他的父元素上边距有一定的margin,如果直接对该子元素设置margin并不能达到预想的效果,而会将两者整体向下移动一定的距离,也就是和更高一级的父元素产生了margin. 
+之所以会出现这样的情况是因为margin重叠的规则, <strong>属于同一个BFC的两个毗邻的Box的margin会发生重叠.</strong>而通过增加border或者padding来分隔两个box显然不够理想.于是我们选择通过产生新的BFC来实现去除两个box见的毗邻状态,常见的方法是使用<code>overflow:hidden</code>.</p>
+<ol>
+<li>去除图片的文字环绕效果  </li>
+</ol>
+<p>对于浮动元素的非浮动块级兄弟元素,其文字依然会环绕浮动元素,这有时候并不是我们想要的效果,通过BFC规则的<code>BFC区域不会与floatbox重叠.</code>我们就可以给该兄弟元素设置<code>overflow:hidden</code>来实现去除文字环绕效果的功能.</p>
+</div></div></div></div><!-- 侧边栏 --><div class="slide-wrap col-md-3"><p class="add-tip">快来这里总结下学到的知识吧！</p><a href="createorupdatenote.html" class="btn btn-success">新建笔记</a></div></div><div class="modal fade" id="delModal"><div class="modal-dialog"><div class="modal-content"><div class="modal-body"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h5>确定要删除该笔记？</h5></div><div class="modal-footer"><button type="button" class="btn btn-default" data-dismiss="modal">取消</button><button type="button" class="btn btn-primary del-btn" data-dismiss="modal">确定</button></div></div></div></div></main><div class="alert alert-success hide-sus" role="alert">已屏蔽</div><div class="alert alert-danger hide-fail" role="alert">屏蔽失败，请重试！</div><div class="alert alert-danger del-fail" role="alert">删除失败，请重试！</div>
+<footer><p><span class="contact">微信公众号：baidu_ife</span><span class="contact">微博：<a target="_blank" href="http://weibo.com/u/5568860641?topnav=1&wvr=6&topsug=1">Baidu前端技术学院</a></span></p><p class="friend-link"><span class="note">友情链接</span><a target="_blank" title="百度EFE前端团队" href="http://efe.baidu.com">百度EFE</a><a target="_blank" href="http://voice.baidu.com">百度语音搜索</a><a href="http://www.chuanke.com/" target="_blank">百度传课</a><a target="_blank" href="http://campus.baidu.com/">百度校园</a><a target="_blank" href="http://talent.baidu.com/external/baidu/campus.html">百度校园招聘</a></p><p><span class="copyright-text"><span>©2016&nbsp;Baidu&nbsp;</span><a href="http://www.baidu.com/duty/" target="_blank">使用百度前必读</a>&nbsp;<a href="http://jianyi.baidu.com" target="_blank">意见反馈</a>&nbsp;<span>京ICP证030173号&nbsp;</span></span></p></footer></div><script src="http://s1.bdstatic.com/r/www/cache/ecom/esl/2-1-4/esl.js"></script><script src="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/js/lib/jquery-1.10.2_d88366fd.js"></script><script src="../dep/EpicEditor-v0.2.2/js/epiceditor.js"></script><script>require.config({'baseUrl': '//ife.baidu.com/asset','paths': { 'bootstrapvalidator': '../dep/bootstrapvalidator/dist/js/bootstrapValidator' },'waitSeconds': 5,'packages': [{'name': 'etpl','location': '../dep/etpl/3.1.0/asset','main': 'main'},{'name': 'bootstrap','location': '../dep/bootstrap-3.3.5/js'},{'name': 'select2','location': '../dep/select2/dist/js','main': 'select2'},{'name': 'jquery-bootpag','location': '../dep/jquery-bootpag/lib','main': 'jquery.bootpag'},{'name': 'bootstrap-slider','location': '../dep/bootstrap-slider/asset/js','main': 'bootstrap-slider'},{'name': 'saber-emitter','location': '../dep/saber-emitter/1.0.0/asset','main': 'emitter'},{'name': 'marked','location': '../dep/marked/lib','main': 'marked'}],'shim': {'bootstrap/button': ['jquery'],'bootstrap/modal': ['jquery'],'bootstrap/collapse': ['jquery'],'bootstrap/dropdown': ['jquery'],'bootstrap/tab': ['jquery'],'bootstrapvalidator': ['jquery'],'jquery-bootpag/jquery.bootpag': ['jquery']}});</script>
+<script>
+    require(['note/noteDetail_9fb33293'], function (app) {
+        app.init(
+            {"login":0,"taskUrl":"\/task\/all","noteUrl":"\/note\/all","loginUrl":"https:\/\/openapi.baidu.com\/oauth\/2.0\/authorize?client_id=89XtMi6980UVMb5iMiRAL27g&response_type=code&redirect_uri=http%3A%2F%2Fife.baidu.com%2Flog%2Fin&scope=&state=a5dee3bc7f6dff14428026f427affd0f&display=page"},
+            460
+        );
+    });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-sweb-app-capable" content="yes"><meta name="keywords" content="前端, 前端开发, web前端, 前端开发工程师, CSS, JavaScript, HTML, Web标准"><meta name="description" content="百度前端技术学院"><link rel="shortcut icon" href="../asset/img/favicon.ico" type="image/x-icon"><link rel="icon" href="../asset/img/favicon.ico" type="image/x-icon"><link rel="bookmark" href="../asset/img/favicon.ico" type="image/x-icon">
+<title>addEventListener()方法第三个参数</title>
+<link href="../asset/css/note/noteDetail_3422fb20.css" rel="stylesheet">
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?d422e3cabaaaa7445e54622b97472bab";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+
+
+</head><body class="result-op"><div id="viewport"><header ><nav class="navbar navbar-default container ife-header"><div class="row"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><div class="navbar-brand ife-logo"><a href="../index.html"><img src="../asset/img/logo.png"></a></div></div><div id="navbar" class="navbar-collapse collapse"><ul class="nav navbar-nav"><li><a href="../task/all.html">任务</a></li><li><a href="all.html">学习笔记</a></li><li class="user-dropdown"><a href="https://openapi.baidu.com/oauth/2.0/authorize?client_id=89XtMi6980UVMb5iMiRAL27g&response_type=code&redirect_uri=http%3A%2F%2Fife.baidu.com%2Flog%2Fin&scope=&state=a5dee3bc7f6dff14428026f427affd0f&display=page">登录</a></li></ul></div></div></nav></header>
+<main class="container note-detail-page"><div class="breadcrumb nav-title"><span class="active">addEventListener()方法第三个参数</span></div><div class="main"><div class="main-wrap col-md-9"><div class="detail"><span class="author-wrap">作者：<img src="http://tb.himg.baidu.com/sys/portrait/item/1dcee8aaa0e88085e4b8bae79a87330a" class="portrait-photo"><a href="../user/profile-userId=5255.html">万仕诚 </a>@<a href="../group/profile-groupId=2025.html">面向对象</a></span><span class="publish-date">发布于：03-23 16:39</span><span class="view-count">阅读：5</span><span class="support-wrap"><a class="glyphicon glyphicon-thumbs-up support-btn " data-role="up"></a>赞<span class="up-num sup-num">0</span><a class="glyphicon glyphicon-thumbs-down support-btn " data-role="down"></a>踩<span class="down-num sup-num">0</span></span></div><div class="note-content-wrap"><div class="content-text"><div id="epiceditor-preview" style="word-wrap: break-word;"><p>可选。布尔值，指定事件是否 在捕获或冒泡阶段执行。</p>
+<p>可能值：</p>
+<p>true - 事件句柄在捕获阶段执行</p>
+<p>false- 默认。事件句柄在冒泡阶段执行</p>
+<p>这是我在runoob.com查看这个方法的用法时候看到。以前居然没有注意到！那么，什么是捕获阶段和冒泡阶段呢？事件句柄的含义我也不太清楚～</p>
+<p>事件句柄写在标签的属性部分里。用分号（;）把 JavaScript 代码分隔开，可以执行复数的语句。</p>
+<h3 id="-">各种事件句柄</h3>
+<ul>
+<li>onclick=scripts </li>
+<li>ondblclick=scripts</li>
+</ul>
+<p>鼠标点击时（onclick）与 鼠标双击时（ondblclick）触发。</p>
+<ul>
+<li>onkeydown=scripts</li>
+<li>onkeypress=scripts</li>
+<li>onkeyup=scripts</li>
+</ul>
+<p>按下键盘按键时（onkeydown）、按下并放开键盘按键时（onkeypress）、放开键盘按键时（onkeyup）触发。</p>
+<ul>
+<li>onmousedown=scripts</li>
+<li>onmouseup=scripts</li>
+<li>onmouseover=scripts</li>
+<li>onmouseout=scripts</li>
+<li>onmousemove=scripts</li>
+</ul>
+<p>按下鼠标按键时（onmousedown）、放开鼠标按键时（onmouseup）、鼠标指针移动到对象上时（onmouseover）、鼠标指针从对象上离开时（onmouseout）、鼠标指针移动时（onmousemove）触发。</p>
+<ul>
+<li>onload=scripts</li>
+<li>onunload=scripts</li>
+</ul>
+<p>页面或图像加载完毕时（onload）、跳转到其他页面或退出页面时（onunload）触发。</p>
+<ul>
+<li>onfocus=scripts</li>
+<li>onblur=scripts</li>
+</ul>
+<p>对象获得焦点时（onfocus）、对象失去焦点时（onblur）触发。</p>
+<ul>
+<li>onsubmit=scripts</li>
+<li>onreset=scripts</li>
+</ul>
+<p>表单被提交时（onsubmit）、表单中的重置按钮被点击时（onreset）触发。把返回值设定为 false 时，可以使这些按钮本来的动作无效。</p>
+<ul>
+<li>onchange=scripts</li>
+</ul>
+<p>表单元素的内容改变时触发。</p>
+<ul>
+<li>onresize=scripts</li>
+<li>onmove=scripts</li>
+</ul>
+<p>窗口被调整大小时（onresize）、窗口被移动时（onmove）触发。</p>
+<ul>
+<li>ondragdrop=scripts</li>
+</ul>
+<p>文件被拖拽到窗口内时触发。要取得被拖拽进窗口文件的 URL 时需使用 event.data ，并且需要更改安全设定。</p>
+<ul>
+<li>onabort=scripts</li>
+</ul>
+<p>图像加载被中断时触发，比如图像还没加载完成用户就按了停止按钮等。在 &lt;img&gt; 标签中使用。</p>
+<ul>
+<li>onerror=scripts</li>
+</ul>
+<p>读取失败时触发。可以在 &lt;body&gt;、&lt;img&gt; 等标签中使用。</p>
+<h2 id="dom-">DOM事件流</h2>
+<p>DOM事件标准定义了两种事件流，别是捕获和冒泡。</p>
+<p>默认情况下，事件使用冒泡事件流，不使用捕获事件流。然而，在Firefox和Safari里，你可以显式的指定使用捕获事件流，方法是在注册事件时传入useCapture参数，将这个参数设为true。</p>
+<h3 id="-">冒泡事件流</h3>
+<p>当事件在某一DOM元素被触发时，例如用户在客户名字节点上点击鼠标，事件将跟随着该节点继承自的各个父节点冒泡穿过整个的DOM节点层次，直到它 遇到依附有该事件类型处理器的节点，此时，该事件是onclick事件。在冒泡过程中的任何时候都可以终止事件的冒泡，在遵从W3C标准的浏览器里可以通 过调用事件对象上的stopPropagation()方法，在Internet Explorer里可以通过设置事件对象的cancelBubble属性为true。如果不停止事件的传播，事件将一直通过DOM冒泡直至到达文档根。</p>
+<h3 id="-">捕获事件流</h3>
+<p>事件的处理将从DOM层次的根开始，而不是从触发事件的目标元素开始，事件被从目标元素的所有祖先元素依次往下传递。在这个过程中，事件会被从文档 根到事件目标元素之间各个继承派生的元素所捕获，如果事件监听器在被注册时设置了useCapture属性为true,那么它们可以被分派给这期间的任何 元素以对事件做出处理；否则，事件会被接着传递给派生元素路径上的下一元素，直至目标元素。事件到达目标元素后，它会接着通过DOM节点再进行冒泡。</p>
+<h2 id="dom-">DOM事件三个阶段</h2>
+<p>当一个DOM事件被触发时，它不仅仅只是单纯地在本身对象上触发一次，而是会经历三个不同的阶段：</p>
+<p>1.捕获阶段：先由文档的根节点document往事件触发对象，从外向内捕获事件对象；</p>
+<p>2.目标阶段：到达目标事件位置（事发地），触发事件；</p>
+<p>3.冒泡阶段：再从目标事件位置往文档的根节点方向回溯，从内向外冒泡事件对象。</p>
+</div></div></div><div class="ref-wrap"><h4>参考文献：</h4><ul class="ref-list"><li class="ref-item-li"><a class="ref-item" href="http://www.jb51.net/article/53438.htm">js事件监听机制(事件捕获)总结</a></li><li class="ref-item-li"><a class="ref-item" href="http://www.monmonkey.com/javascript/yufa4.html">事件句柄</a></li><li class="ref-item-li"><a class="ref-item" href="http://www.runoob.com/jsref/met-document-addeventlistener.html">HTML DOM addEventListener() 方法</a></li></ul></div></div><!-- 侧边栏 --><div class="slide-wrap col-md-3"><p class="add-tip">快来这里总结下学到的知识吧！</p><a href="createorupdatenote.html" class="btn btn-success">新建笔记</a></div></div><div class="modal fade" id="delModal"><div class="modal-dialog"><div class="modal-content"><div class="modal-body"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h5>确定要删除该笔记？</h5></div><div class="modal-footer"><button type="button" class="btn btn-default" data-dismiss="modal">取消</button><button type="button" class="btn btn-primary del-btn" data-dismiss="modal">确定</button></div></div></div></div></main><div class="alert alert-success hide-sus" role="alert">已屏蔽</div><div class="alert alert-danger hide-fail" role="alert">屏蔽失败，请重试！</div><div class="alert alert-danger del-fail" role="alert">删除失败，请重试！</div>
+<footer><p><span class="contact">微信公众号：baidu_ife</span><span class="contact">微博：<a target="_blank" href="http://weibo.com/u/5568860641?topnav=1&wvr=6&topsug=1">Baidu前端技术学院</a></span></p><p class="friend-link"><span class="note">友情链接</span><a target="_blank" title="百度EFE前端团队" href="http://efe.baidu.com">百度EFE</a><a target="_blank" href="http://voice.baidu.com">百度语音搜索</a><a href="http://www.chuanke.com/" target="_blank">百度传课</a><a target="_blank" href="http://campus.baidu.com/">百度校园</a><a target="_blank" href="http://talent.baidu.com/external/baidu/campus.html">百度校园招聘</a></p><p><span class="copyright-text"><span>©2016&nbsp;Baidu&nbsp;</span><a href="http://www.baidu.com/duty/" target="_blank">使用百度前必读</a>&nbsp;<a href="http://jianyi.baidu.com" target="_blank">意见反馈</a>&nbsp;<span>京ICP证030173号&nbsp;</span></span></p></footer></div><script src="http://s1.bdstatic.com/r/www/cache/ecom/esl/2-1-4/esl.js"></script><script src="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/js/lib/jquery-1.10.2_d88366fd.js"></script><script src="../dep/EpicEditor-v0.2.2/js/epiceditor.js"></script><script>require.config({'baseUrl': '//ife.baidu.com/asset','paths': { 'bootstrapvalidator': '../dep/bootstrapvalidator/dist/js/bootstrapValidator' },'waitSeconds': 5,'packages': [{'name': 'etpl','location': '../dep/etpl/3.1.0/asset','main': 'main'},{'name': 'bootstrap','location': '../dep/bootstrap-3.3.5/js'},{'name': 'select2','location': '../dep/select2/dist/js','main': 'select2'},{'name': 'jquery-bootpag','location': '../dep/jquery-bootpag/lib','main': 'jquery.bootpag'},{'name': 'bootstrap-slider','location': '../dep/bootstrap-slider/asset/js','main': 'bootstrap-slider'},{'name': 'saber-emitter','location': '../dep/saber-emitter/1.0.0/asset','main': 'emitter'},{'name': 'marked','location': '../dep/marked/lib','main': 'marked'}],'shim': {'bootstrap/button': ['jquery'],'bootstrap/modal': ['jquery'],'bootstrap/collapse': ['jquery'],'bootstrap/dropdown': ['jquery'],'bootstrap/tab': ['jquery'],'bootstrapvalidator': ['jquery'],'jquery-bootpag/jquery.bootpag': ['jquery']}});</script>
+<script>
+    require(['note/noteDetail_9fb33293'], function (app) {
+        app.init(
+            {"login":0,"taskUrl":"\/task\/all","noteUrl":"\/note\/all","loginUrl":"https:\/\/openapi.baidu.com\/oauth\/2.0\/authorize?client_id=89XtMi6980UVMb5iMiRAL27g&response_type=code&redirect_uri=http%3A%2F%2Fife.baidu.com%2Flog%2Fin&scope=&state=a5dee3bc7f6dff14428026f427affd0f&display=page"},
+            453
+        );
+    });
+
+</script>
+</body>
+</html>

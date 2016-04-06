@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-sweb-app-capable" content="yes"><meta name="keywords" content="前端, 前端开发, web前端, 前端开发工程师, CSS, JavaScript, HTML, Web标准"><meta name="description" content="百度前端技术学院"><link rel="shortcut icon" href="../asset/img/favicon.ico" type="image/x-icon"><link rel="icon" href="../asset/img/favicon.ico" type="image/x-icon"><link rel="bookmark" href="../asset/img/favicon.ico" type="image/x-icon">
+<title>【笔记】任务二：零基础HTML及CSS编码（一）</title>
+<link href="../asset/css/note/noteDetail_3422fb20.css" rel="stylesheet">
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?d422e3cabaaaa7445e54622b97472bab";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+
+
+</head><body class="result-op"><div id="viewport"><header ><nav class="navbar navbar-default container ife-header"><div class="row"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><div class="navbar-brand ife-logo"><a href="../index.html"><img src="../asset/img/logo.png"></a></div></div><div id="navbar" class="navbar-collapse collapse"><ul class="nav navbar-nav"><li><a href="../task/all.html">任务</a></li><li><a href="all.html">学习笔记</a></li><li class="user-dropdown"><a href="https://openapi.baidu.com/oauth/2.0/authorize?client_id=89XtMi6980UVMb5iMiRAL27g&response_type=code&redirect_uri=http%3A%2F%2Fife.baidu.com%2Flog%2Fin&scope=&state=a5dee3bc7f6dff14428026f427affd0f&display=page">登录</a></li></ul></div></div></nav></header>
+<main class="container note-detail-page"><div class="breadcrumb nav-title"><span class="active">【笔记】任务二：零基础HTML及CSS编码（一）</span></div><div class="main"><div class="main-wrap col-md-9"><div class="detail"><span class="author-wrap">作者：<img src="http://tb.himg.baidu.com/sys/portrait/item/b88fe998bfe588a9e698afe582bbe5ad908535" class="portrait-photo"><a href="../user/profile-userId=10533.html">洪志强 </a>@<a href="../group/profile-groupId=4055.html">302</a></span><span class="publish-date">发布于：03-23 16:18</span><span class="view-count">阅读：12</span><span class="support-wrap"><a class="glyphicon glyphicon-thumbs-up support-btn " data-role="up"></a>赞<span class="up-num sup-num">0</span><a class="glyphicon glyphicon-thumbs-down support-btn " data-role="down"></a>踩<span class="down-num sup-num">0</span></span></div><div class="note-content-wrap"><div class="content-text"><div id="epiceditor-preview" style="word-wrap: break-word;"><h3 id="-">知识点</h3>
+<h4 id="display-">display 属性</h4>
+<ol>
+<li>block：块级元素，一个块级元素会新开始一行并尽可能撑满容器。常见块级元素：div、p、form、header、footer、section等。</li>
+<li>inline：行内元素，一个行内元素可以在段落中包裹一些文字并不会打乱段落的布局。常见行内元素：span、a等。</li>
+<li>none：把 display 设置为 none 之后，不会保留元素本该显示的空间。<code>visibility: 4. hidden</code> 还会保留。</li>
+<li>inline-block：将对象呈递为内联对象，但是对象的内容作为块对象呈递。</li>
+</ol>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display">https://developer.mozilla.org/en-US/docs/Web/CSS/display</a>
+<a href="http://www.cnblogs.com/KeithWang/p/3139517.html">http://www.cnblogs.com/KeithWang/p/3139517.html</a></p>
+<hr>
+<h4 id="-margin-0-auto-">水平居中（margin: 0 auto）</h4>
+<p>示例代码：</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;水平居中&lt;/title&gt;
+    &lt;style&gt;
+        .center {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: green;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="center"&gt;hello world&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<hr>
+<h4 id="-">盒模型</h4>
+<p>margin、padding、border</p>
+<p>box-sizing
+当你设置一个元素为 box-sizing: border-box; 时，此元素的内边距和边框不再会增加它的宽度。</p>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model">https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model</a></p>
+<h4 id="position">position</h4>
+<p>static：默认。一个 static 元素表示它不会被“positioned”，一个 position 属性被设置为其他值的元素表示它会被“positioned”。
+relative：相对于自身定位。使用 top、right、bottom 和 left 属性可以让元素偏离其正常位置
+absolute：相对于最近的“positioned”祖先元素。如果绝对定位（position属性的值为absolute）的元素没有“positioned”祖先元素，那么它是相对于文档的 body 元素，并且它会随着页面滚动而移动。记住一个“positioned”元素是指p osition 值不是 static 的元素。
+fixed：相对于视窗来定位，这意味着即便页面滚动，它还是会停留在相同的位置。和 relative 一样， top 、 right 、 bottom 和 left 属性都可用。</p>
+<p>示例代码：导航栏</p>
+<pre><code>&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;nav&lt;/title&gt;
+    &lt;style&gt;
+        header {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: green;
+        }
+
+        .man-nav {
+            position: relative;
+        }
+
+        .ul-links {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            margin-top: -10px;
+        }
+
+        .ul-links li {
+            list-style-type: none;
+            float: left;
+            margin-left: 8px;
+        }
+
+        .ul-links:after {
+            clear: both;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;header&gt;
+    &lt;nav class="man-nav"&gt;
+        &lt;div class="logo"&gt;MyLogo&lt;/div&gt;
+        &lt;ul class="ul-links"&gt;
+            &lt;li&gt;&lt;a href=""&gt;nav1&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=""&gt;nav1&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=""&gt;nav1&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+&lt;/header&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><hr>
+<h4 id="float-clear">float、clear</h4>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/float">https://developer.mozilla.org/en-US/docs/Web/CSS/float</a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/clear">https://developer.mozilla.org/en-US/docs/Web/CSS/clear</a></p>
+<hr>
+<h4 id="-media-">媒体查询 - media（响应式设计）</h4>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Media_queries">https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Media_queries</a></p>
+<hr>
+<h4 id="box-shadow-">box-shadow 阴影效果</h4>
+<p><a href="http://www.w3school.com.cn/cssref/pr_box-shadow.asp">http://www.w3school.com.cn/cssref/pr_box-shadow.asp</a></p>
+<h4 id="flexbox-">flexbox（新的布局方案）</h4>
+<p><a href="http://www.w3cplus.com/css3/a-guide-to-flexbox.html">http://www.w3cplus.com/css3/a-guide-to-flexbox.html</a>
+<a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html">http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html</a>
+<a href="http://zh.learnlayout.com/flexbox.html">http://zh.learnlayout.com/flexbox.html</a></p>
+</div></div></div></div><!-- 侧边栏 --><div class="slide-wrap col-md-3"><p class="add-tip">快来这里总结下学到的知识吧！</p><a href="createorupdatenote.html" class="btn btn-success">新建笔记</a></div></div><div class="modal fade" id="delModal"><div class="modal-dialog"><div class="modal-content"><div class="modal-body"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h5>确定要删除该笔记？</h5></div><div class="modal-footer"><button type="button" class="btn btn-default" data-dismiss="modal">取消</button><button type="button" class="btn btn-primary del-btn" data-dismiss="modal">确定</button></div></div></div></div></main><div class="alert alert-success hide-sus" role="alert">已屏蔽</div><div class="alert alert-danger hide-fail" role="alert">屏蔽失败，请重试！</div><div class="alert alert-danger del-fail" role="alert">删除失败，请重试！</div>
+<footer><p><span class="contact">微信公众号：baidu_ife</span><span class="contact">微博：<a target="_blank" href="http://weibo.com/u/5568860641?topnav=1&wvr=6&topsug=1">Baidu前端技术学院</a></span></p><p class="friend-link"><span class="note">友情链接</span><a target="_blank" title="百度EFE前端团队" href="http://efe.baidu.com">百度EFE</a><a target="_blank" href="http://voice.baidu.com">百度语音搜索</a><a href="http://www.chuanke.com/" target="_blank">百度传课</a><a target="_blank" href="http://campus.baidu.com/">百度校园</a><a target="_blank" href="http://talent.baidu.com/external/baidu/campus.html">百度校园招聘</a></p><p><span class="copyright-text"><span>©2016&nbsp;Baidu&nbsp;</span><a href="http://www.baidu.com/duty/" target="_blank">使用百度前必读</a>&nbsp;<a href="http://jianyi.baidu.com" target="_blank">意见反馈</a>&nbsp;<span>京ICP证030173号&nbsp;</span></span></p></footer></div><script src="http://s1.bdstatic.com/r/www/cache/ecom/esl/2-1-4/esl.js"></script><script src="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/js/lib/jquery-1.10.2_d88366fd.js"></script><script src="../dep/EpicEditor-v0.2.2/js/epiceditor.js"></script><script>require.config({'baseUrl': '//ife.baidu.com/asset','paths': { 'bootstrapvalidator': '../dep/bootstrapvalidator/dist/js/bootstrapValidator' },'waitSeconds': 5,'packages': [{'name': 'etpl','location': '../dep/etpl/3.1.0/asset','main': 'main'},{'name': 'bootstrap','location': '../dep/bootstrap-3.3.5/js'},{'name': 'select2','location': '../dep/select2/dist/js','main': 'select2'},{'name': 'jquery-bootpag','location': '../dep/jquery-bootpag/lib','main': 'jquery.bootpag'},{'name': 'bootstrap-slider','location': '../dep/bootstrap-slider/asset/js','main': 'bootstrap-slider'},{'name': 'saber-emitter','location': '../dep/saber-emitter/1.0.0/asset','main': 'emitter'},{'name': 'marked','location': '../dep/marked/lib','main': 'marked'}],'shim': {'bootstrap/button': ['jquery'],'bootstrap/modal': ['jquery'],'bootstrap/collapse': ['jquery'],'bootstrap/dropdown': ['jquery'],'bootstrap/tab': ['jquery'],'bootstrapvalidator': ['jquery'],'jquery-bootpag/jquery.bootpag': ['jquery']}});</script>
+<script>
+    require(['note/noteDetail_9fb33293'], function (app) {
+        app.init(
+            {"login":0,"taskUrl":"\/task\/all","noteUrl":"\/note\/all","loginUrl":"https:\/\/openapi.baidu.com\/oauth\/2.0\/authorize?client_id=89XtMi6980UVMb5iMiRAL27g&response_type=code&redirect_uri=http%3A%2F%2Fife.baidu.com%2Flog%2Fin&scope=&state=a5dee3bc7f6dff14428026f427affd0f&display=page"},
+            452
+        );
+    });
+
+</script>
+</body>
+</html>
